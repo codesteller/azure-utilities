@@ -10,3 +10,5 @@ sudo chown ${USER} /mnt/ramdisk/blobfuse2tmp
 
 mkdir -p ./data
 blobfuse2 mount ./data --config-file=./configs/azblob-config.yaml
+
+rm packages-microsoft-prod.deb
