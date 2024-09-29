@@ -2,7 +2,7 @@
 
 cwd=$(pwd)
 cmake_version=3.27.0
-cuda_version=12.5
+cuda_version=12-5
 
 # Backup bashrc
 cp ~/.bashrc ~/.bashrc.bak
