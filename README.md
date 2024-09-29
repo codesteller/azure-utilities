@@ -18,5 +18,10 @@ vi azure-utilities/config.sh # Make changes to the config file with right Accoun
 bash azure-utilities/mount_storage_account.sh
 ```
 
+To unmount the storage account, run the following command
+```
+blobfuse2 unmount ~/datasets
+```
+
 
 

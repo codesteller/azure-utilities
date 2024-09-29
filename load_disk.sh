@@ -9,3 +9,7 @@ sudo mkdir /datadrive
 sudo mount /dev/sdc1 /datadrive
 
 echo '/dev/sdc1 /datadrive xfs defaults 0 0' | sudo tee -a /etc/fstab
+
+sudo chown -R $USER:$USER /datadrive
+
+# Reboot the VM
