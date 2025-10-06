@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cwd=$(pwd)
-cmake_version=3.27.0
+cmake_version=3.30.0
 cuda_version=12-5
 
 # Backup bashrc
@@ -25,7 +25,7 @@ sudo apt -y install cuda-toolkit-${cuda_version}
 curl https://raw.githubusercontent.com/codesteller/utility-scripts/master/docker-setup-jammy-nv.sh | bash 
 
 # Install ROS Humble
-curl https://raw.githubusercontent.com/codesteller/utility-scripts/master/install-ros-humble-jammy.sh | bash 
+# curl https://raw.githubusercontent.com/codesteller/utility-scripts/master/install-ros-humble-jammy.sh | bash 
 
 # Install NGC
 mkdir -p ~/Apsoft/nvidia
@@ -40,7 +40,7 @@ wget https://github.com/Kitware/CMake/releases/download/v${cmake_version}/cmake-
 tar -xvf cmake-${cmake_version}-linux-x86_64.tar.gz
 mkdir cmake && mv cmake-${cmake_version}-linux-x86_64 cmake/${cmake_version}
 sudo mv -f cmake /opt/
-echo 'export cmake_version=3.27.0' >> ~/.bashrc 
+echo 'export cmake_version=3.30.0' >> ~/.bashrc 
 echo 'export PATH=/opt/cmake/${cmake_version}/bin:$PATH' >> ~/.bashrc 
 
 # Install cuDNN
@@ -53,15 +53,18 @@ sudo chown -Rv _apt:root /var/cache/apt/archives/partial/
 sudo chmod -Rv 700 /var/cache/apt/archives/partial/
 sudo apt update
 
-# Install Python Miniforge
-wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
-bash Miniforge3-$(uname)-$(uname -m).sh -b -p "${HOME}/Apsoft/miniforge3"
+## Install Python Miniforge
+# wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+# bash Miniforge3-$(uname)-$(uname -m).sh -b -p "${HOME}/Apsoft/miniforge3"
 ### Add path to bashrc
-echo "function env_conda()  {" | tee -a ~/.bashrc > /dev/null
-echo '    source "${HOME}/Apsoft/miniforge3/etc/profile.d/conda.sh"' | tee -a ~/.bashrc > /dev/null
-echo '    source "${HOME}/Apsoft/miniforge3/etc/profile.d/mamba.sh"' | tee -a ~/.bashrc > /dev/null
-echo '    mamba activate' | tee -a ~/.bashrc > /dev/null
-echo '} ' | tee -a ~/.bashrc > /dev/null
+#echo "function env_conda()  {" | tee -a ~/.bashrc > /dev/null
+#echo '    source "${HOME}/Apsoft/miniforge3/etc/profile.d/conda.sh"' | tee -a ~/.bashrc > /dev/null
+#echo '    source "${HOME}/Apsoft/miniforge3/etc/profile.d/mamba.sh"' | tee -a ~/.bashrc > /dev/null
+#echo '    mamba activate' | tee -a ~/.bashrc > /dev/null
+#echo '} ' | tee -a ~/.bashrc > /dev/null
+
+# Install uvicorn
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Install OpenCV
 curl https://raw.githubusercontent.com/codesteller/utility-scripts/master/install-opencv-jammy.sh | bash
