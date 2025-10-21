@@ -22,7 +22,11 @@ sudo apt update
 sudo apt -y install cuda-toolkit-${cuda_version}
 
 # Install Docker with NVIDIA support
-curl https://raw.githubusercontent.com/codesteller/utility-scripts/master/docker-setup-jammy-nv.sh | bash 
+# Uncomment Below line for 22.04
+# curl https://raw.githubusercontent.com/codesteller/utility-scripts/master/docker-setup-jammy-nv.sh | bash 
+
+# Uncomment Below line for 24.04
+curl https://raw.githubusercontent.com/codesteller/utility-scripts/refs/heads/noble/install_docker.sh | bash 
 
 # Install ROS Humble
 # curl https://raw.githubusercontent.com/codesteller/utility-scripts/master/install-ros-humble-jammy.sh | bash 
