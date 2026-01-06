@@ -71,7 +71,7 @@ sudo apt update
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Install OpenCV
-curl https://raw.githubusercontent.com/codesteller/utility-scripts/master/install-opencv-jammy.sh | bash
+# curl https://raw.githubusercontent.com/codesteller/utility-scripts/master/install-opencv-jammy.sh | bash
 
 
 
