@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 sudo apt-get install -y libfuse3-dev fuse3 blobfuse2
